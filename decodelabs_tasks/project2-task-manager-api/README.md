@@ -41,7 +41,7 @@ GET /api/tasks/:id
 ### Create Task
 POST /api/tasks
 
-```json
+'''json
 {
   "title": "Task name"
 }
