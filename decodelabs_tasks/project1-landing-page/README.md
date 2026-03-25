@@ -1,31 +1,55 @@
-# NovaFlow Responsive Landing Page
+# 🌐 Responsive Landing Page
 
-A modern responsive product landing page built using HTML, CSS, and JavaScript.
+## 📌 Description
 
-## Features
+A modern and responsive landing page built using HTML, CSS, and JavaScript.  
+This project demonstrates strong frontend fundamentals including layout design, responsiveness, and UI interactions.
 
-- Responsive design
+---
+
+## 🚀 Features
+
+- Fully responsive design
+- Mobile-first layout
 - Dark mode toggle
-- Smooth scrolling
-- Contact form validation
-- Accessible navigation
-- Scroll animations
-- Sticky header
+- Smooth scrolling navigation
+- Form validation
+- Interactive UI elements
+- Clean and modern design
 
-## Technologies
+---
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
+## 🛠️ Tech Stack
 
-## Live Demo
+- HTML5 (Semantic)
+- CSS3 (Flexbox & Grid)
+- JavaScript (Vanilla)
 
-https://emandinarendra5-source.github.io/novaflow-landing-page
+---
 
-## How to Run
+## 📂 Project Structure
+project1-landing-page/
+│
+├── index.html
+├── css/
+│ └── style.css
+├── js/
+│ └── script.js
+└── assets/
 
-1. Open `index.html` in a browser.
-2. Or host with a local server (recommended):
-   - `npx serve` (from repo root)
-   - `python -m http.server 8000` (from this folder)
-3. Visit `http://localhost:8000` and verify responsiveness and interactions.
+---
+
+## ▶️ How to Run
+
+1. Open the project folder
+2. Double click `index.html`
+3. Open in browser
+
+---
+
+## 🎯 Learning Outcome
+
+- Responsive web design
+- DOM manipulation
+- UI/UX fundamentals
+- Dark mode implementation

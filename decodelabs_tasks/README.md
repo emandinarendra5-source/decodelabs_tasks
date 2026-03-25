@@ -1,24 +1,58 @@
-# decodelabs_tasks
+# 🚀 DecodeLabs Internship Tasks
 
-## Overview
-A clean, professional repository for internship projects showcasing full-stack web development.
+This repository contains the projects completed as part of my Full Stack Internship at DecodeLabs.
 
-## Completed Projects
-1. project1-landing-page: Responsive Landing Page (HTML, CSS, JavaScript)
-2. project2-task-manager-api: Task Manager API (Node.js, Express)
+---
 
-## Tech Stack
-- HTML, CSS, JavaScript
-- Node.js, Express
+## 📌 Completed Projects
 
-## Project Descriptions
-- **project1-landing-page**: A responsive frontend landing page with a modern layout, adaptive design, and interactive behavior.
-- **project2-task-manager-api**: A RESTful backend API for tasks with create, read, update, and delete endpoints.
+### 🔹 Project 1: Responsive Landing Page
+A modern responsive landing page built using HTML, CSS, and JavaScript.
 
-## Structure
-- project1-landing-page/
-- project2-task-manager-api/
+**Features:**
+- Responsive design (mobile, tablet, desktop)
+- Dark mode toggle
+- Smooth scrolling
+- Form validation
+- Clean UI/UX
 
-## How to Use
-1. Clone repository.
-2. Change directory into each project folder and follow that project README.
+---
+
+### 🔹 Project 2 & 3: Task Manager API (Backend + Database)
+A RESTful API built using Node.js and Express, extended with MongoDB database integration.
+
+**Features:**
+- Full CRUD operations
+- REST API design
+- Modular architecture
+- MongoDB Atlas integration
+- Persistent data storage
+
+---
+
+## 🛠️ Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+
+---
+
+## 📂 Repository Structure
+decodelabs_tasks/
+│
+├── project1-landing-page/
+├── project2-task-manager-api/
+└── README.md
+
+
+---
+
+## 👨‍💻 Author
+
+Narendra  
+CSE – 3rd Year

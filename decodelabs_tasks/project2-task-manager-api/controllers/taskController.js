@@ -1,98 +1,94 @@
-let tasks = require("../data/tasks");
+const Task = require("../models/Task");
 
 // GET all tasks
-const getTasks = (req, res) => {
-  res.status(200).json(tasks);
+const getTasks = async (req, res) => {
+  try {
+    const tasks = await Task.find();
+    res.status(200).json(tasks);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
 };
 
 // GET a task by ID
-const getTaskById = (req, res) => {
-  const id = Number(req.params.id);
+const getTaskById = async (req, res) => {
+  try {
+    const task = await Task.findById(req.params.id);
 
-  if (Number.isNaN(id)) {
-    return res.status(400).json({ message: "Invalid task ID" });
+    if (!task) {
+      return res.status(404).json({ message: "Task not found" });
+    }
+
+    res.status(200).json(task);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
   }
-
-  const task = tasks.find((t) => t.id === id);
-
-  if (!task) {
-    return res.status(404).json({ message: "Task not found" });
-  }
-
-  res.status(200).json(task);
 };
 
 // POST create a new task
-const createTask = (req, res) => {
-  const { title } = req.body;
+const createTask = async (req, res) => {
+  try {
+    const { title, completed } = req.body;
 
-  if (!title || typeof title !== "string" || !title.trim()) {
-    return res.status(400).json({ message: "Title is required" });
+    if (!title || typeof title !== "string" || !title.trim()) {
+      return res.status(400).json({ message: "Title is required and must be a non-empty string" });
+    }
+
+    const task = await Task.create({
+      title: title.trim(),
+      completed: completed || false,
+    });
+
+    res.status(201).json(task);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
   }
-
-  const task = {
-    id: Date.now(),
-    title: title.trim(),
-    completed: false,
-  };
-
-  tasks.push(task);
-
-  res.status(201).json(task);
 };
 
 // PUT update an existing task
-const updateTask = (req, res) => {
-  const id = Number(req.params.id);
+const updateTask = async (req, res) => {
+  try {
+    const { title, completed } = req.body;
 
-  if (Number.isNaN(id)) {
-    return res.status(400).json({ message: "Invalid task ID" });
-  }
-
-  const task = tasks.find((t) => t.id === id);
-
-  if (!task) {
-    return res.status(404).json({ message: "Task not found" });
-  }
-
-  const { title, completed } = req.body;
-
-  if (title !== undefined) {
-    if (typeof title !== "string" || !title.trim()) {
-      return res.status(400).json({ message: "Title must be a non-empty string" });
+    const updateData = {};
+    if (title !== undefined) {
+      if (typeof title !== "string" || !title.trim()) {
+        return res.status(400).json({ message: "Title must be a non-empty string" });
+      }
+      updateData.title = title.trim();
+    }
+    if (completed !== undefined) {
+      if (typeof completed !== "boolean") {
+        return res.status(400).json({ message: "Completed must be boolean" });
+      }
+      updateData.completed = completed;
     }
 
-    task.title = title.trim();
-  }
+    const task = await Task.findByIdAndUpdate(req.params.id, updateData, { new: true });
 
-  if (completed !== undefined) {
-    if (typeof completed !== "boolean") {
-      return res.status(400).json({ message: "Completed must be boolean" });
+    if (!task) {
+      return res.status(404).json({ message: "Task not found" });
     }
 
-    task.completed = completed;
+    res.status(200).json(task);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
   }
-
-  res.status(200).json(task);
 };
 
 // DELETE a task
-const deleteTask = (req, res) => {
-  const id = Number(req.params.id);
+const deleteTask = async (req, res) => {
+  try {
+    const task = await Task.findByIdAndDelete(req.params.id);
 
-  if (Number.isNaN(id)) {
-    return res.status(400).json({ message: "Invalid task ID" });
+    if (!task) {
+      return res.status(404).json({ message: "Task not found" });
+    }
+
+    res.status(200).json({ message: "Task deleted" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
   }
-
-  const index = tasks.findIndex((t) => t.id === id);
-
-  if (index === -1) {
-    return res.status(404).json({ message: "Task not found" });
-  }
-
-  tasks.splice(index, 1);
-
-  res.status(200).json({ message: "Task deleted" });
 };
 
 module.exports = { getTasks, getTaskById, createTask, updateTask, deleteTask };

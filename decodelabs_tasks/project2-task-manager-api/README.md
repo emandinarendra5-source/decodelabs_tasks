@@ -1,31 +1,93 @@
-# Project 2 - Task Manager API
+# ⚙️ Task Manager API
 
-A Node.js + Express REST API for task management with CRUD operations.
+## 📌 Description
 
-## Features
+A RESTful Task Manager API built using Node.js and Express.js, extended with MongoDB database integration using Mongoose.
 
-- Get all tasks
-- Get a task by ID
-- Create new tasks
-- Update tasks
-- Delete tasks
-- JSON payload handling
+This project demonstrates backend development concepts including API design, data handling, and database persistence.
 
-## Tech Stack
+---
+
+## 🚀 Features
+
+- Create Task
+- Get All Tasks
+- Get Task by ID
+- Update Task
+- Delete Task
+- Persistent storage using MongoDB Atlas
+- Modular project structure
+- Error handling
+
+---
+
+## 🛠️ Tech Stack
 
 - Node.js
-- Express
+- Express.js
+- MongoDB Atlas
+- Mongoose
 
-## How to Run
+---
 
-1. Install dependencies:
-   - `npm install`
-2. Start the server:
-   - `node server.js` or `npm start` (if script configured)
-3. Use API clients like Postman or curl at:
-   - `http://localhost:3000/tasks`
+## 📡 API Endpoints
 
-## Notes
+### Get All Tasks
+GET /api/tasks
 
-- Data is stored in `data/tasks.js` (in-memory module).
-- Add routes in `routes/taskRoutes.js` and controller logic in `controllers/taskController.js`.
+### Get Task by ID
+GET /api/tasks/:id
+
+### Create Task
+POST /api/tasks
+
+```json
+{
+  "title": "Task name"
+}
+
+### Update Task
+
+PUT /api/tasks/:id
+
+### Delete Task
+
+DELETE /api/tasks/:id
+
+##🗄️ Database Integration (Project 3)
+
+This project includes MongoDB integration:
+
+Data stored in MongoDB Atlas
+Mongoose schema used for tasks
+Data persists even after server restart
+
+##📂 Project Structure
+
+project2-task-manager-api/
+│
+├── server.js
+├── routes/
+├── controllers/
+├── models/
+├── config/
+├── package.json
+
+##▶️ How to Run
+
+Install dependencies:
+npm install
+Add MongoDB connection string in config/db.js
+Start server:
+npm run dev
+
+Server runs at:
+http://localhost:5000
+
+##🎯 Learning Outcome
+
+REST API development
+Backend architecture
+Database integration
+CRUD operations
+Error handling
