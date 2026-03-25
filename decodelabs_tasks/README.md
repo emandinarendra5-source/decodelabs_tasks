@@ -43,12 +43,14 @@ A RESTful API built using Node.js and Express, extended with MongoDB database in
 ---
 
 ## 📂 Repository Structure
+
+```text
 decodelabs_tasks/
 │
 ├── project1-landing-page/
 ├── project2-task-manager-api/
 └── README.md
-
+```
 
 ---
 

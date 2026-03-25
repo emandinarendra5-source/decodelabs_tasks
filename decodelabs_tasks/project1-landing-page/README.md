@@ -28,14 +28,17 @@ This project demonstrates strong frontend fundamentals including layout design, 
 ---
 
 ## 📂 Project Structure
+
+```text
 project1-landing-page/
 │
 ├── index.html
 ├── css/
-│ └── style.css
+│   └── style.css
 ├── js/
-│ └── script.js
+│   └── script.js
 └── assets/
+```
 
 ---
 

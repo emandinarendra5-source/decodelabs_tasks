@@ -33,37 +33,38 @@ This project demonstrates backend development concepts including API design, dat
 ## 📡 API Endpoints
 
 ### Get All Tasks
-GET /api/tasks
+`GET /api/tasks`
 
 ### Get Task by ID
-GET /api/tasks/:id
+`GET /api/tasks/:id`
 
 ### Create Task
-POST /api/tasks
+`POST /api/tasks`
 
-'''json
+Request body:
+```json
 {
   "title": "Task name"
 }
+```
 
 ### Update Task
-
-PUT /api/tasks/:id
+`PUT /api/tasks/:id`
 
 ### Delete Task
+`DELETE /api/tasks/:id`
 
-DELETE /api/tasks/:id
-
-##🗄️ Database Integration (Project 3)
+## 🗄️ Database Integration (Project 3)
 
 This project includes MongoDB integration:
 
-Data stored in MongoDB Atlas
-Mongoose schema used for tasks
-Data persists even after server restart
+- Data stored in MongoDB Atlas
+- Mongoose schema used for tasks
+- Data persists even after server restart
 
-##📂 Project Structure
+## 📂 Project Structure
 
+```text
 project2-task-manager-api/
 │
 ├── server.js
@@ -72,22 +73,27 @@ project2-task-manager-api/
 ├── models/
 ├── config/
 ├── package.json
+```
 
-##▶️ How to Run
+## ▶️ How to Run
 
-Install dependencies:
-npm install
-Add MongoDB connection string in config/db.js
-Start server:
-npm run dev
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Add MongoDB connection string in `config/db.js`
+3. Start server:
+   ```bash
+   npm run dev
+   ```
 
 Server runs at:
-http://localhost:5000
+- http://localhost:5000
 
-##🎯 Learning Outcome
+## 🎯 Learning Outcome
 
-REST API development
-Backend architecture
-Database integration
-CRUD operations
-Error handling
+- REST API development
+- Backend architecture
+- Database integration
+- CRUD operations
+- Error handling
